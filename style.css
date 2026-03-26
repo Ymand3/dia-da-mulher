@@ -1,0 +1,113 @@
+/* Configurações de Cores e Fontes */
+:root {
+    --primaria: #6a1b9a;    /* Roxo escuro */
+    --secundaria: #ad1457;  /* Rosa escuro */
+    --fundo: #fdf6ff;       /* Lilás bem clarinho */
+    --texto: #2d3436;
+    --branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif, Arial;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* Cabeçalho com efeito de gradiente */
+header {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                linear-gradient(135deg, var(--primaria), var(--secundaria));
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* Corte moderno no fundo */
+}
+
+header h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Conteúdo Principal */
+.container {
+    max-width: 1000px;
+    margin: -50px auto 50px; /* Sobe um pouco para sobrepor o header */
+    padding: 40px;
+    background: var(--branco);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: var(--primaria);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+/* Grid de Cartões */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    border-bottom: 4px solid var(--secundaria);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: var(--secundaria);
+    margin-bottom: 10px;
+}
+
+/* Seção de Citação */
+.quote {
+    margin-top: 50px;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #555;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #f1f1f1;
+    font-size: 0.9rem;
+}
+
+/* Ajuste para Celulares */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    .container { margin: 20px; padding: 20px; }
+}
