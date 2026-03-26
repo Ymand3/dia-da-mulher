@@ -1,113 +1,196 @@
-/* Configurações de Cores e Fontes */
-:root {
-    --primaria: #6a1b9a;    /* Roxo escuro */
-    --secundaria: #ad1457;  /* Rosa escuro */
-    --fundo: #fdf6ff;       /* Lilás bem clarinho */
-    --texto: #2d3436;
-    --branco: #ffffff;
-}
-
+/* --- RESET E CONFIGURAÇÕES GERAIS --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif, Arial;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --rosa-primario: #d81b60;   /* Rosa vibrante */
+    --rosa-claro: #fce4ec;      /* Rosa fundo */
+    --rosa-hover: #f06292;      /* Rosa destaque */
+    --vinho: #880e4f;           /* Texto e rodapé */
+    --branco: #ffffff;
+    --sombra: rgba(216, 27, 96, 0.15);
 }
 
 body {
-    background-color: var(--fundo);
-    color: var(--texto);
+    background-color: #fff5f7;
+    color: #4a4a4a;
     line-height: 1.6;
+    scroll-behavior: smooth; /* Deixa o deslize da página suave */
 }
 
-/* Cabeçalho com efeito de gradiente */
-header {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                linear-gradient(135deg, var(--primaria), var(--secundaria));
-    height: 350px;
+/* --- MENU DE NAVEGAÇÃO --- */
+nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px 8%;
+    background-color: var(--branco);
+    box-shadow: 0 2px 15px var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--rosa-primario);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--vinho);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--rosa-hover);
+}
+
+/* --- CABEÇALHO (HERO) --- */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(255, 192, 203, 0.7), rgba(136, 14, 79, 0.6)), 
+                url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200') center/cover;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    color: var(--branco);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* Corte moderno no fundo */
+    color: white;
+    padding: 20px;
 }
 
-header h1 {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Conteúdo Principal */
+.btn-principal {
+    padding: 15px 40px;
+    background-color: var(--rosa-primario);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--sombra);
+}
+
+.btn-principal:hover {
+    background-color: var(--vinho);
+    transform: translateY(-3px);
+}
+
+/* --- SEÇÕES --- */
 .container {
-    max-width: 1000px;
-    margin: -50px auto 50px; /* Sobe um pouco para sobrepor o header */
-    padding: 40px;
-    background: var(--branco);
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    padding: 80px 10%;
 }
 
-.intro {
-    text-align: center;
-    margin-bottom: 40px;
+.bg-rosa-claro {
+    background-color: var(--rosa-claro);
 }
 
 h2 {
-    color: var(--primaria);
-    margin-bottom: 15px;
-    font-size: 2rem;
+    color: var(--vinho);
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    text-align: center;
 }
 
-/* Grid de Cartões */
-.cards-grid {
+h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--rosa-hover);
+    display: block;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* --- CARDS --- */
+.cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 30px;
 }
 
 .card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    border-bottom: 4px solid var(--secundaria);
-    transition: all 0.3s ease;
+    background: var(--branco);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-bottom: 5px solid var(--rosa-hover);
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .card h3 {
-    color: var(--secundaria);
-    margin-bottom: 10px;
+    color: var(--rosa-primario);
+    margin-bottom: 15px;
 }
 
-/* Seção de Citação */
-.quote {
-    margin-top: 50px;
-    text-align: center;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: #555;
-    padding: 20px;
-    border-top: 1px solid #eee;
+.card p {
+    color: #666;
+    margin-bottom: 25px;
+    min-height: 80px;
+    transition: all 0.4s ease-in-out; /* Suaviza a troca de texto do JS */
 }
 
-/* Rodapé */
+/* --- BOTÕES DOS CARDS --- */
+.btn-card {
+    background-color: var(--rosa-hover);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    background-color: var(--rosa-primario);
+}
+
+/* --- RODAPÉ --- */
 footer {
     text-align: center;
-    padding: 30px;
-    background: #f1f1f1;
-    font-size: 0.9rem;
+    padding: 50px;
+    background-color: var(--vinho);
+    color: white;
 }
 
-/* Ajuste para Celulares */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
-    header h1 { font-size: 2.5rem; }
-    .container { margin: 20px; padding: 20px; }
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+    nav ul {
+        margin-top: 15px;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 }
