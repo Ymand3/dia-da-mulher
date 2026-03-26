@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia Internacional da Mulher - Trabalho Escolar</title>
+    <style>
+        /* --- CSS: O DESIGN DO SITE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff5f7;
+            color: #4a4a4a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(216, 27, 96, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #d81b60;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #880e4f;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f06292;
+        }
+
+        /* Cabeçalho (Hero Section) */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(255, 192, 203, 0.7), rgba(136, 14, 79, 0.6)), 
+                        url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1200') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .btn-principal {
+            padding: 15px 40px;
+            background-color: #d81b60;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+        }
+
+        .btn-principal:hover {
+            background-color: #ad1457;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+        }
+
+        /* Seções Gerais */
+        .container {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            color: #880e4f;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #f06292;
+            display: block;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Cards de Informação */
+        .bg-rosa-claro {
+            background-color: #fce4ec;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-bottom: 5px solid #f06292;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #d81b60;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            min-height: 80px;
+            transition: all 0.5s ease;
+        }
+
+        /* Botão Interativo (JavaScript) */
+        .btn-card {
+            background-color: #f06292;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-card:hover {
+            background-color: #d81b60;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 50px;
+            background-color: #880e4f;
+            color: white;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            nav ul { padding: 0; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MULHER • 8 DE MARÇO</div>
+        <ul>
+            <li><a href="#historia">História</a></li>
+            <li><a href="#conquistas">Conquistas</a></li>
+            <li><a href="#futuro">Futuro</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Força e Resiliência</h1>
+        <p>Homenageando aquelas que lutaram no passado para que pudéssemos construir o futuro hoje.</p>
+        <a href="#conquistas" class="btn-principal">Explorar Dados</a>
+    </header>
+
+    <section id="conquistas" class="bg-rosa-claro">
+        <div class="container">
+            <h2>Conquistas e Desafios</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Direito ao Voto</h3>
+                    <p id="info1">O sufrágio feminino foi uma das maiores vitórias do século XX.</p>
+                    <button class="btn-card" onclick="revelarInfo('info1', 'No Brasil, o voto feminino foi garantido em 1932, após décadas de muita luta das sufragistas brasileiras.')">Saber mais</button>
+                </div>
+
+                <div class="card">
+                    <h3>Mercado de Trabalho</h3>
+                    <p id="info2">A presença feminina em todas as profissões cresce a cada ano.</p>
+                    <button class="btn-card" onclick="revelarInfo('info2', 'Apesar do avanço, mulheres ocupam apenas 37% dos cargos de gerência no Brasil, segundo o IBGE.')">Saber mais</button>
+                </div>
+
+                <div class="card">
+                    <h3>Ciência e Tecnologia</h3>
+                    <p id="info3">Mulheres estão na linha de frente da inovação global.</p>
+                    <button class="btn-card" onclick="revelarInfo('info3', 'Apenas 30% dos pesquisadores científicos no mundo são mulheres. Precisamos incentivar mais meninas na área STEM!')">Saber mais</button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-card" style="background: #880e4f;" onclick="resetarInfos()">Resetar Informações</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Trabalho Escolar: Dia Internacional da Mulher</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Desenvolvido para fins educativos.</p>
+    </footer>
+
+    <script>
+        // Função para mudar o texto e o estilo
+        function revelarInfo(id, mensagem) {
+            const paragrafo = document.getElementById(id);
+            paragrafo.innerText = mensagem;
+            paragrafo.style.color = "#d81b60";
+            paragrafo.style.fontWeight = "bold";
+            paragrafo.style.transform = "scale(1.05)";
+        }
+
+        // Função para voltar ao texto original
+        function resetarInfos() {
+            const textosOriginais = {
+                'info1': 'O sufrágio feminino foi uma das maiores vitórias do século XX.',
+                'info2': 'A presença feminina em todas as profissões cresce a cada ano.',
+                'info3': 'Mulheres estão na linha de frente da inovação global.'
+            };
+
+            for (let id in textosOriginais) {
+                const p = document.getElementById(id);
+                p.innerText = textosOriginais[id];
+                p.style.color = "#666";
+                p.style.fontWeight = "normal";
+                p.style.transform = "scale(1)";
+            }
+        }
+    </script>
+
+</body>
+</html>
